@@ -136,10 +136,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <Button
-                android:text="Jueves 23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <!-- Horas disponibles -->
@@ -151,29 +147,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Confirmar -->
         <GridLayout
             android:id="@+id/gridHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="3"
+            android:layout_marginBottom="16dp"
             android:alignmentMode="alignBounds"
-            android:rowOrderPreserved="false"
-            android:layout_marginBottom="16dp">
+            android:columnCount="3"
+            android:rowOrderPreserved="false">
 
             <Button android:text="08:00 AM" />
+
             <Button android:text="09:00 AM" />
+
             <Button android:text="10:00 AM" />
+
             <Button android:text="11:00 AM" />
-            <Button android:text="12:00 PM"
+
+            <Button
                 android:backgroundTint="@color/primary"
-                android:textColor="@android:color/white"/>
+                android:text="12:00 PM"
+                android:textColor="@android:color/white" />
+
             <Button android:text="13:00 PM" />
+
             <Button android:text="15:30 PM" />
+
             <Button android:text="16:30 PM" />
+
             <Button android:text="17:30 PM" />
         </GridLayout>
 
-        <!-- Confirmar -->
         <CheckBox
             android:id="@+id/chkConfirmar"
             android:layout_width="wrap_content"
