@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_historial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_gradient"
+    tools:context=".HistorialMedico">
+
+  <!-- Título -->
+  <TextView
+      android:id="@+id/tvTituloHistorial"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Historial Médico"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      android:textColor="@color/primary"
+      android:gravity="center"
+      android:layout_marginBottom="16dp" />
+
+  <!-- Botón para subir imágenes -->
+  <Button
+      android:id="@+id/btnSubirImagen"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Subir imagen desde galería"
+      android:textAllCaps="false"
+      android:backgroundTint="@color/primary"
+      android:textColor="@android:color/white"
+      android:layout_marginBottom="16dp" />
+
+  <!-- Vista en cuadrícula para mostrar imágenes -->
+  <GridView
+      android:id="@+id/gridHistorial"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:numColumns="2"
+      android:horizontalSpacing="8dp"
+      android:verticalSpacing="8dp"
+      android:clipToPadding="false"
+      android:stretchMode="columnWidth"
+      android:gravity="center" />
+
+</LinearLayout>
