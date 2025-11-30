@@ -7,8 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import android.view.View
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 
 class DetalleDoctor : AppCompatActivity() {
@@ -31,7 +29,6 @@ class DetalleDoctor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_doctor)
 
-        // Usamos el nuevo color azulado
         colorPrimario = ContextCompat.getColor(this, R.color.primary_selected)
         colorFondoClaro = ContextCompat.getColor(this, R.color.light_gray_background)
         colorTextoOscuro = ContextCompat.getColor(this, R.color.black)
@@ -99,7 +96,6 @@ class DetalleDoctor : AppCompatActivity() {
     }
 
     private fun setBotonDeseleccionado(button: Button) {
-        // Obtenemos el drawable de fondo para manipular su color (ya tiene la forma redonda)
         val drawable = ContextCompat.getDrawable(this, R.drawable.bg_rounded_button)?.mutate() as GradientDrawable
         drawable.setColor(colorFondoClaro)
         button.background = drawable
