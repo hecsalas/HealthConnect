@@ -9,7 +9,7 @@
     android:background="@drawable/bg_gradient"
     tools:context=".ExamenesDisponibles">
 
-    <!-- Título principal -->
+    <!-- Título -->
     <TextView
         android:id="@+id/tvTituloExamenes"
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
         android:padding="10dp"
         android:layout_marginBottom="12dp" />
 
-    <!-- Lista de exámenes -->
+    <!-- Lista -->
     <ListView
         android:id="@+id/listaExamenes"
         android:layout_width="match_parent"
@@ -41,12 +41,12 @@
         android:divider="@color/gray"
         android:dividerHeight="1dp" />
 
-    <!-- Botón para agendar -->
+    <!-- Botón para AGREGAR examen -->
     <Button
-        android:id="@+id/btnAgendarExamen"
+        android:id="@+id/btnAgregarExamen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agendar examen"
+        android:text="Agregar examen"
         android:textAllCaps="false"
         android:backgroundTint="@color/primary"
         android:textColor="@android:color/white"

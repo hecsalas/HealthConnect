@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="@android:color/darker_gray">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTituloEditarPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar Perfil"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- FOTO DE PERFIL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_person"
+                android:background="@drawable/circle_bg"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnCambiarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cambiar foto"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/primary"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- SECCIÓN DATOS PERSONALES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos personales"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="8dp"
+            android:padding="8dp" />
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/edtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre completo"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Correo -->
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Teléfono -->
+        <EditText
+            android:id="@+id/edtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Dirección -->
+        <EditText
+            android:id="@+id/edtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Fecha de nacimiento -->
+        <EditText
+            android:id="@+id/edtFechaNacimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de nacimiento"
+            android:focusable="false"
+            android:clickable="true"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardarCambios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar cambios"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

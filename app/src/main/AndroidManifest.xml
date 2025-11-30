@@ -16,11 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthConnect">
         <activity
+            android:name=".GlosarioMedico"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleExamen"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPerfil"
+            android:exported="false" />
+        <activity
             android:name=".DetalleDoctor"
             android:exported="false" />
         <activity
             android:name=".MisResultados"
-            android:exported="false" /> <!-- Actividades secundarias -->
+            android:exported="false" />
         <activity
             android:name=".Configuracion"
             android:exported="false" />
@@ -35,7 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" /> <!-- Activity principal (Logi) -->
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="true">
@@ -44,7 +53,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Clave de la API de Google Maps -->
+        </activity> <!-- API de Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA3IR7kq4A_GUbCs_pCViqIJ569vtebJpI" />

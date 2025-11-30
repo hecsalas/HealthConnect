@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_historial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/bg_gradient"
-    tools:context=".HistorialMedico">
+    android:background="@drawable/bg_gradient">
 
   <!-- Título -->
   <TextView
-      android:id="@+id/tvTituloHistorial"
+      android:id="@+id/tvHistorialTitulo"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Historial Médico"
@@ -21,28 +18,30 @@
       android:gravity="center"
       android:layout_marginBottom="16dp" />
 
-  <!-- Botón para subir imágenes -->
+  <!-- Lista de exámenes -->
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1">
+
+    <LinearLayout
+        android:id="@+id/layoutHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+  </ScrollView>
+
+  <!-- Botón agregar -->
   <Button
-      android:id="@+id/btnSubirImagen"
+      android:id="@+id/btnAgregarExamen"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Subir imagen desde galería"
+      android:text="Agregar examen"
       android:textAllCaps="false"
       android:backgroundTint="@color/primary"
       android:textColor="@android:color/white"
-      android:layout_marginBottom="16dp" />
-
-  <!-- Vista en cuadrícula para mostrar imágenes -->
-  <GridView
-      android:id="@+id/gridHistorial"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1"
-      android:numColumns="2"
-      android:horizontalSpacing="8dp"
-      android:verticalSpacing="8dp"
-      android:clipToPadding="false"
-      android:stretchMode="columnWidth"
-      android:gravity="center" />
+      android:layout_marginTop="8dp" />
 
 </LinearLayout>

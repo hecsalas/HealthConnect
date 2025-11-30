@@ -1,5 +1,6 @@
 package com.example.healthconnect
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
@@ -33,12 +34,17 @@ class Configuracion : AppCompatActivity() {
         switchNotificaciones.isChecked = prefs.getBoolean("notificaciones", true)
         switchModoOscuro.isChecked = prefs.getBoolean("modo_oscuro", false)
 
-        // Listeners
+        // Listener Notificaciones
         switchNotificaciones.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit().putBoolean("notificaciones", isChecked).apply()
-            Toast.makeText(this, if (isChecked) "Notificaciones activadas" else "Notificaciones desactivadas", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                if (isChecked) "Notificaciones activadas" else "Notificaciones desactivadas",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
+        // Listener Modo Oscuro
         switchModoOscuro.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit().putBoolean("modo_oscuro", isChecked).apply()
             if (isChecked)
@@ -47,13 +53,22 @@ class Configuracion : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
+        //  Redirige a Editar Perfil
         btnEditarPerfil.setOnClickListener {
-            Toast.makeText(this, "Función 'Editar perfil' aún no implementada", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, EditarPerfil::class.java)
+            startActivity(intent)
         }
 
+        //  Cerrar sesión
         btnCerrarSesion.setOnClickListener {
             Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show()
-            // Aquí podrías limpiar datos del usuario o volver al login
+
+            prefs.edit().clear().apply()
+
+            val intent = Intent(this, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
             finish()
         }
     }
