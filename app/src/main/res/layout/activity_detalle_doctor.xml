@@ -1,199 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_detalle_doctor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@drawable/bg_gradient"
     tools:context=".DetalleDoctor">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
-
-        <!-- Sección superior: Información del doctor -->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/ivFotoDoctor"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/ic_doctor"
+                        android:background="@drawable/circle_background_flat"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="Foto del doctor" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNombreDoctor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Diego Pérez"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvEspecialidadDoctor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiología"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:weightSum="3">
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_call"
+                        android:backgroundTint="@color/light_gray_background"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        android:padding="10dp"
+                        android:contentDescription="Llamar" />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_video"
+                        android:backgroundTint="@color/light_gray_background"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        android:padding="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Videollamada" />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_calendar"
+                        android:backgroundTint="@color/light_gray_background"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        android:padding="10dp"
+                        android:contentDescription="Calendario" />
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tvNombreDoctor"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dr. Diego Pérez"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/primary" />
+                    android:text="Médico con más de 10 años de experiencia en atención primaria y medicina general. Enfocado en el bienestar integral de sus pacientes."
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="16dp" />
 
-                <TextView
-                    android:id="@+id/tvEspecialidadDoctor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cardiología"
-                    android:textSize="16sp"
-                    android:textColor="@color/gray" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/ivFotoDoctor"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_doctor"
-                android:background="@drawable/circle_background"
-                android:scaleType="centerCrop"
-                android:layout_marginStart="12dp" />
-        </LinearLayout>
 
-        <!-- Botones de acción -->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:weightSum="3">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-            <ImageButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_call"
-                android:backgroundTint="@color/primary"
-                android:layout_weight="1"
-                android:contentDescription="Llamar" />
-
-            <ImageButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_video"
-                android:backgroundTint="@color/primary"
-                android:layout_weight="1"
-                android:contentDescription="Videollamada" />
-
-            <ImageButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_calendar"
-                android:backgroundTint="@color/primary"
-                android:layout_weight="1"
-                android:contentDescription="Calendario" />
-        </LinearLayout>
-
-        <!-- Descripción del doctor -->
-        <TextView
-            android:id="@+id/tvDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Médico con más de 10 años de experiencia en atención primaria y medicina general. Enfocado en el bienestar integral de sus pacientes."
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Días disponibles -->
-        <TextView
-            android:text="Días disponibles"
-            android:textStyle="bold"
-            android:textColor="@color/primary"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:id="@+id/contenedorDias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="16dp">
-
-            <Button
-                android:text="Lunes 20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:text="Martes 21"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/primary"
-                android:textColor="@android:color/white"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <Button
-                android:text="Miércoles 22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:text="Días disponibles"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/contenedorDias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
 
-        <!-- Horas disponibles -->
-        <TextView
-            android:text="Horas disponibles"
-            android:textStyle="bold"
-            android:textColor="@color/primary"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                    <Button
+                        android:text="Lunes 20"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:background="@drawable/bg_rounded_button"
+                        android:padding="12dp"
+                        android:layout_marginEnd="4dp"/>
 
-        <!-- Confirmar -->
-        <GridLayout
-            android:id="@+id/gridHoras"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:alignmentMode="alignBounds"
-            android:columnCount="3"
-            android:rowOrderPreserved="false">
+                    <Button
+                        android:text="Martes 21"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:background="@drawable/bg_rounded_button"
+                        android:padding="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="4dp"/>
 
-            <Button android:text="08:00 AM" />
+                    <Button
+                        android:text="Miércoles 22"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:background="@drawable/bg_rounded_button"
+                        android:padding="12dp"
+                        android:layout_marginStart="4dp"/>
 
-            <Button android:text="09:00 AM" />
+                </LinearLayout>
 
-            <Button android:text="10:00 AM" />
+                <TextView
+                    android:text="Horas disponibles"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-            <Button android:text="11:00 AM" />
+                <GridLayout
+                    android:id="@+id/gridHoras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:alignmentMode="alignBounds"
+                    android:columnCount="3"
+                    android:rowOrderPreserved="false">
 
-            <Button
-                android:backgroundTint="@color/primary"
-                android:text="12:00 PM"
-                android:textColor="@android:color/white" />
+                    <Button android:text="08:00 AM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="09:00 AM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="10:00 AM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="11:00 AM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button
+                        android:text="12:00 PM"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:background="@drawable/bg_rounded_button"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_margin="4dp" />
+                    <Button android:text="13:00 PM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="15:30 PM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="16:30 PM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                    <Button android:text="17:30 PM" style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/bg_rounded_button" android:textColor="@color/black" android:textSize="12sp" android:layout_margin="4dp"/>
+                </GridLayout>
 
-            <Button android:text="13:00 PM" />
+                <CheckBox
+                    android:id="@+id/chkConfirmar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmar la selección y aceptar términos de servicio."
+                    android:textColor="@color/gray"
+                    android:layout_marginBottom="16dp" />
 
-            <Button android:text="15:30 PM" />
+                <Button
+                    android:id="@+id/btnAgendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmar Agendamiento"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/primary_selected"
+                    android:textColor="@android:color/white" />
 
-            <Button android:text="16:30 PM" />
-
-            <Button android:text="17:30 PM" />
-        </GridLayout>
-
-        <CheckBox
-            android:id="@+id/chkConfirmar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirmar la selección"
-            android:layout_marginBottom="16dp" />
-
-        <Button
-            android:id="@+id/btnAgendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Agendar"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/primary"
-            android:textColor="@android:color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

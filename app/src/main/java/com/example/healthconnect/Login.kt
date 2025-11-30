@@ -18,6 +18,9 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val btnLogin: Button = findViewById(R.id.btnLogin)
+        // Obtener la referencia del nuevo botón de registro
+        val btnRegister: Button = findViewById(R.id.btnRegister)
+
         val etUsuario: EditText = findViewById(R.id.etUsuario)
         val edtPassword: EditText = findViewById(R.id.edtPassword)
         val txMensaje: TextView = findViewById(R.id.txMensaje)
@@ -27,7 +30,6 @@ class Login : AppCompatActivity() {
         val passwdBase = "admin"
 
         btnLogin.setOnClickListener {
-
             if (etUsuario.text.toString() == usuarioBase &&
                 edtPassword.text.toString() == passwdBase) {
 
@@ -43,6 +45,12 @@ class Login : AppCompatActivity() {
                 txMensaje.text = "Login Fallido!!"
             }
         }
+
+        btnRegister.setOnClickListener {
+            val intentRegistro = Intent(this, Register::class.java)
+            startActivity(intentRegistro)
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

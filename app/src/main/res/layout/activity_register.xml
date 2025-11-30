@@ -3,68 +3,64 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
     android:background="@drawable/bg_gradient"
-    tools:context=".Login">
-
-    <ImageView
-        android:id="@+id/img_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_logo"
-        android:contentDescription="Logo médico"
-        android:layout_marginBottom="24dp" />
+    tools:context=".Register">
 
     <TextView
-        android:id="@+id/tv_titulo"
-        android:text="HealthConnect"
-        android:textSize="28sp"
+        android:text="Crear Nueva Cuenta"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/primary"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
-
-    <TextView
-        android:id="@+id/tv_slogan"
-        android:text="Conéctate con tu salud"
-        android:textSize="16sp"
-        android:textColor="@color/gray"
-        android:layout_marginBottom="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario"
+        android:hint="Nombre de Usuario"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/primary">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUsuario"
+            android:id="@+id/etRegUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:hint="Correo Electrónico"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/primary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRegEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         app:endIconMode="password_toggle"
         app:boxBackgroundMode="outline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/edtRegPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
@@ -74,29 +70,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnConfirmarRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
+        android:text="Confirmar Registro"
         app:cornerRadius="20dp"
         android:textAllCaps="false"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegister"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Crear Cuenta"
-        app:cornerRadius="20dp"
-        android:textAllCaps="false"
-        android:layout_marginTop="12dp"/>
-
-    <TextView
-        android:id="@+id/txMensaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Bienvenid@!"
-        android:textColor="@color/gray"
-        android:textSize="16sp" />
 </LinearLayout>

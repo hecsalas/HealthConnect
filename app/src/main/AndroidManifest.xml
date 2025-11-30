@@ -16,6 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthConnect">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".ConfiguracionAvanzada"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmaDiariaRapida"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleResultado"
+            android:exported="false" />
+        <activity
             android:name=".GlosarioMedico"
             android:exported="false" />
         <activity
@@ -34,7 +46,7 @@
             android:name=".Configuracion"
             android:exported="false" />
         <activity
-            android:name=".ExamenesDisponibles"
+            android:name=".SistemaRecordatorios"
             android:exported="false" />
         <activity
             android:name=".CentrosSalud"

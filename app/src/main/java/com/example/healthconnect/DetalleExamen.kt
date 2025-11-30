@@ -3,6 +3,7 @@ package com.example.healthconnect
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 
 class DetalleExamen : AppCompatActivity() {
 
@@ -20,6 +21,16 @@ class DetalleExamen : AppCompatActivity() {
 
         tvTitulo.text = nombre
         tvFecha.text = fecha
-        tvDescripcion.text = descripcion
+
+        if (descripcion != null) {
+            val htmlFormattedDescription = descripcion
+                .replace("**", "<b>") // Inicio de negrita
+                .replace("</b>", "</b>") // Fin de negrita
+
+            tvDescripcion.text = HtmlCompat.fromHtml(
+                htmlFormattedDescription,
+                HtmlCompat.FROM_HTML_MODE_LEGACY
+            )
+        }
     }
 }

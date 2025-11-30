@@ -6,7 +6,6 @@
     android:padding="16dp"
     android:background="@drawable/bg_gradient">
 
-  <!-- Título -->
   <TextView
       android:id="@+id/tvHistorialTitulo"
       android:layout_width="match_parent"
@@ -18,7 +17,6 @@
       android:gravity="center"
       android:layout_marginBottom="16dp" />
 
-  <!-- Lista de exámenes -->
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
@@ -33,12 +31,21 @@
 
   </ScrollView>
 
-  <!-- Botón agregar -->
   <Button
       android:id="@+id/btnAgregarExamen"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Agregar examen"
+      android:textAllCaps="false"
+      android:backgroundTint="@color/primary"
+      android:textColor="@android:color/white"
+      android:layout_marginTop="8dp" />
+
+  <Button
+      android:id="@+id/btnGlosario"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Ver Glosario Médico"
       android:textAllCaps="false"
       android:backgroundTint="@color/primary"
       android:textColor="@android:color/white"

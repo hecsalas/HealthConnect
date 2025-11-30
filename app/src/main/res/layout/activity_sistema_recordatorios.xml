@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_sistema_recordatorios"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_gradient"
+    tools:context=".SistemaRecordatorios">
+
+    <TextView
+        android:id="@+id/tvTituloRecordatorios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recordatorios Inteligentes"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Configura tus alarmas médicas de forma rápida o accede a las opciones avanzadas para horarios complejos y personalización."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/btnAlarmaDiaria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir Alarma Diaria Rápida"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primary"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="— O —"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnOpcionesAvanzadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚙️ Configuración Avanzada"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"/>
+
+</LinearLayout>

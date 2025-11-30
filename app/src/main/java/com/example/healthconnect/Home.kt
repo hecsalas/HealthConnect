@@ -16,13 +16,13 @@ class Home : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
-        //List Views
+        // List Views
         val listaServicios: ListView = findViewById(R.id.lista_servicios)
         val listaMedicos: ListView = findViewById(R.id.lista_medicos)
 
-        //Datos
+        // Datos
         val servicios = arrayOf(
-            "Exámenes disponibles",
+            "Recordatorios",
             "Historial médico",
             "Mis resultados",
             "Centros de salud cercanos",
@@ -38,60 +38,68 @@ class Home : AppCompatActivity() {
             "Dra. Fernández - Endocrinología"
         )
 
-        //Adaptadores
-        val adaptServicios = ArrayAdapter(this, android.R.layout.simple_list_item_1, servicios)
-        val adaptMedicos = ArrayAdapter(this, android.R.layout.simple_list_item_1, medicos)
+        // Adaptadores
+        // Adaptador para Servicios (usa list_item_card)
+        val adaptServicios = ArrayAdapter(
+            this,
+            R.layout.list_item_card,
+            R.id.tv_item_text,
+            servicios
+        )
+
+        // Adaptador para Médicos: AHORA TAMBIÉN USA list_item_card
+        val adaptMedicos = ArrayAdapter(
+            this,
+            R.layout.list_item_card, // <--- CAMBIO AQUÍ
+            R.id.tv_item_text,      // <--- CAMBIO AQUÍ
+            medicos
+        )
 
         listaServicios.adapter = adaptServicios
         listaMedicos.adapter = adaptMedicos
 
+        // 3. Lógica de Navegación de Servicios
         listaServicios.setOnItemClickListener { parent, view, position, id ->
             val itemElegido = parent.getItemAtPosition(position).toString()
 
-            if (itemElegido == "Historial médico") {
-                val nuevaVentana = Intent(this, HistorialMedico::class.java)
-                startActivity(nuevaVentana)
-
-            } else if (itemElegido == "Centros de salud cercanos") {
-                val nuevaVentana = Intent(this, CentrosSalud::class.java)
-                startActivity(nuevaVentana)
-
-            } else if (itemElegido == "Exámenes disponibles") {
-                val nuevaVentana = Intent(this, ExamenesDisponibles::class.java)
-                startActivity(nuevaVentana)
-
-            } else if (itemElegido == "Configuración") {
-                val nuevaVentana = Intent(this, Configuracion::class.java)
-                startActivity(nuevaVentana)
-
-            } else if (itemElegido == "Mis resultados") {
-                val nuevaVentana = Intent(this, MisResultados::class.java)
-                startActivity(nuevaVentana)
+            val intentDestino = when (itemElegido) {
+                "Historial médico" -> Intent(this, HistorialMedico::class.java)
+                "Centros de salud cercanos" -> Intent(this, CentrosSalud::class.java)
+                "Recordatorios" -> Intent(this, SistemaRecordatorios::class.java)
+                "Configuración" -> Intent(this, Configuracion::class.java)
+                "Mis resultados" -> Intent(this, MisResultados::class.java)
+                else -> null
             }
+
+            intentDestino?.let { startActivity(it) }
         }
 
-
-        //MEDICOS
         listaMedicos.setOnItemClickListener { parent, view, position, id ->
+            val medicoCompleto = parent.getItemAtPosition(position).toString() // Ej: "Dr. Pérez - Cardiología"
+
+            // Separar nombre y especialidad
+            val partes = medicoCompleto.split(" - ")
+            val nombre = partes[0]
+            val especialidad = partes[1]
+
             val intent = Intent(this, DetalleDoctor::class.java)
+
+            // *** AÑADIR ESTAS LÍNEAS PARA ENVIAR DATOS ***
+            intent.putExtra("nombre_doctor", nombre)
+            intent.putExtra("especialidad_doctor", especialidad)
+
             startActivity(intent)
+        }
 
-
-
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-                v.setPadding(
-                    systemBars.left,
-                    systemBars.top,
-                    systemBars.right,
-                    systemBars.bottom
-                )
-                insets
-
-            }
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
+            insets
         }
     }
 }
-
-
-
